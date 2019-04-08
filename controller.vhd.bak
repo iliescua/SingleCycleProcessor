@@ -1,0 +1,76 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity controller is
+port(COND : in std_logic_vector(3 downto 0);
+	  OP : in std_logic_vector(1 downto 0);
+	  FUNCT: in std_logic_vector(5 downto 0);
+	  C,V,N,Z : in std_logic;
+	  EXTS : out std_logic_vector(1 downto 0);
+	  ALUS : out std_logic_vector(2 downto 0);
+	  PCSRC, PCWR, REGDST, REGWR, ALUSRCB, ALUFLAGWR,
+	  MEMWR, REGSRC : out std_logic);
+end entity controller;
+
+architecture Dataflow of controller is 
+begin
+
+	EXTS <= "01" when (COND = "1110" and OP = "01" and FUNCT = "011001") or --LDR
+							(COND = "1110" and OP = "01" and FUNCT = "011000") else --STR
+			  "10" when (COND = "1110" and OP = "10" and FUNCT(5 downto 4) = "10") or --B
+							(COND = "0000" and OP = "10" and FUNCT(5 downto 4) = "10") or --BEQ
+							(COND = "0001" and OP = "10" and FUNCT(5 downto 4) = "10") else --BNE
+			  "00"; --Any other possible case
+	
+	ALUS <= "001" when (COND = "1110" and OP = "00" and FUNCT = "100100") or--SUB Func
+							 (COND = "1110" and OP = "00" and FUNCT = "000100") or--SUB Imm
+			             (COND = "1110" and OP = "00" and FUNCT = "100101") or--CMP Func
+							 (COND = "1110" and OP = "00" and FUNCT = "000101") else--CMP Imm
+			  "010" when (COND = "1110" and OP = "00" and FUNCT = "100000") or --AND Func
+							 (COND = "1110" and OP = "00" and FUNCT = "100000") else --AND Imm
+			  "011" when (COND = "1110" and OP = "00" and FUNCT = "111000") or --OR Func
+							 (COND = "1110" and OP = "00" and FUNCT = "011000") else --OR Imm
+			  "100" when (COND = "1110" and OP = "00" and FUNCT = "100010") or --XOR Func
+							 (COND = "1110" and OP = "00" and FUNCT = "000010") else --XOR Imm
+			  "110" when (COND = "1110" and OP = "00" and FUNCT = "111010") or --MOV Func
+							 (COND = "1110" and OP = "00" and FUNCT = "011010") else --MOV Imm
+			  "000";--ADD,LDR/STR,B Cases
+			  
+	PCSRC <= '0' when (COND = "1110" and OP = "10" and FUNCT(5 downto 4) = "10") or --B
+							(COND = "0000" and OP = "10" and FUNCT(5 downto 4) = "10") or --BEQ
+							(COND = "0001" and OP = "10" and FUNCT(5 downto 4) = "10") else --BNE
+			   '1';--Any other possible case
+				
+	PCWR <= '1';--Always 1
+	
+	REGDST <= '1' when (COND = "1110" and OP = "01" and FUNCT = "011000") else --STR
+				 '0'; --Everything but load and store take the 0 path
+	
+	REGWR <= '0' when (COND = "1110" and OP = "00" and FUNCT = "100101") or --CMP Func
+							(COND = "1110" and OP = "01" and FUNCT = "011000") or --STR
+							(COND = "1110" and OP = "10" and FUNCT(5 downto 4) = "10") or --B
+							(COND = "0000" and OP = "10" and FUNCT(5 downto 4) = "10") or --BEQ
+							(COND = "0001" and OP = "10" and FUNCT(5 downto 4) = "10") else --BNE
+				'1'; --Everything but compare, store, and branch write to reg
+	
+	ALUSRCB <= '1' when (COND = "1110" and OP = "00" and FUNCT = "101000") or --ADD Func
+							  (COND = "1110" and OP = "00" and FUNCT = "100000") or --AND Func
+							  (COND = "1110" and OP = "00" and FUNCT = "100101") or --CMP Func
+							  (COND = "1110" and OP = "00" and FUNCT = "100010") or --XOR Func
+							  (COND = "1110" and OP = "00" and FUNCT = "111010") or --MOV Func
+							  (COND = "1110" and OP = "00" and FUNCT = "111000") or --OR Func
+							  (COND = "1110" and OP = "00" and FUNCT = "100100") else --SUB Func
+				  '0';--When IMM is present
+							  
+							  
+	ALUFLAGWR <= '1' when (COND = "1110" and OP = "00" and FUNCT = "100101") or --CMP Func
+								 (COND = "1110" and OP = "00" and FUNCT = "000101") else--CMP Imm
+					 '0'; --Only compare sets the flags
+					 
+	MEMWR <= '1' when (COND = "1110" and OP = "01" and FUNCT = "011000") else --STR
+				'0'; --All cases but store
+				
+	REGSRC <= '0' when (COND = "1110" and OP = "01" and FUNCT = "011001") else --LDR
+				 '1'; --All cases but load
+							
+end architecture Dataflow;

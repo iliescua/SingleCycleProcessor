@@ -1,0 +1,18 @@
+Fitter Status : Successful - Thu May 10 23:56:19 2018
+Quartus Prime Version : 17.0.2 Build 602 07/19/2017 SJ Lite Edition
+Revision Name : SCP
+Top-level Entity Name : SCPFPGA
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 2,645 / 49,760 ( 5 % )
+    Total combinational functions : 1,983 / 49,760 ( 4 % )
+    Dedicated logic registers : 1,616 / 49,760 ( 3 % )
+Total registers : 1616
+Total pins : 215 / 360 ( 60 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )

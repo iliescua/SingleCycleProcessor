@@ -1,0 +1,46 @@
+Quartus Prime Archive log --	C:/Users/iliescua/Desktop/CE1921/SCP/SCP.qarlog
+
+Archive:	C:/Users/iliescua/Desktop/CE1921/SCP/SCP.qar
+Date:		Tue May 08 19:12:56 2018
+Quartus Prime		17.0.2 Build 602 07/19/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/iliescua/Desktop/CE1921/SCP/SCP.bdf
+C:/Users/iliescua/Desktop/CE1921/SCP/SCP.qpf
+C:/Users/iliescua/Desktop/CE1921/SCP/SCP.qsf
+C:/Users/iliescua/Desktop/CE1921/SCP/Waveform.vwf
+C:/Users/iliescua/Desktop/CE1921/SCP/Waveform1.vwf
+C:/Users/iliescua/Desktop/CE1921/SCP/Waveform2.vwf
+C:/Users/iliescua/Desktop/CE1921/SCP/Waveform3.vwf
+C:/Users/iliescua/Desktop/CE1921/SCP/Waveform4.vwf
+C:/Users/iliescua/Desktop/CE1921/SCP/Waveform5.vwf
+C:/Users/iliescua/Desktop/CE1921/SCP/Waveform7.vwf
+C:/Users/iliescua/Desktop/CE1921/SCP/adder.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/adderExt.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/alu.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/bmux16to1.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/bmux2.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/bmux2to1.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/bmux32bit.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/constant4.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/constant8.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/controller.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/decode.bdf
+C:/Users/iliescua/Desktop/CE1921/SCP/decode4to16.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/dmem.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/execute.bdf
+C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/fetch.bdf
+C:/Users/iliescua/Desktop/CE1921/SCP/irom.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/mulFunc.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/reg32.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/reg4.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/regfile.bdf
+C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd
+C:/Users/iliescua/Desktop/CE1921/SCP/testbench_regfile.vhd
+c:/intelfpga_lite/17.0/quartus/bin64/assignment_defaults.qdf
+	======= Total: 35 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

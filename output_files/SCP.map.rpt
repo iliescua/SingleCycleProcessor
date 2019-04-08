@@ -1,0 +1,675 @@
+Analysis & Synthesis report for SCP
+Thu May 10 23:54:19 2018
+Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu May 10 23:54:19 2018       ;
+; Quartus Prime Version              ; 17.0.2 Build 602 07/19/2017 SJ Lite Edition ;
+; Revision Name                      ; SCP                                         ;
+; Top-level Entity Name              ; SCPFPGA                                     ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 3,499                                       ;
+;     Total combinational functions  ; 1,981                                       ;
+;     Dedicated logic registers      ; 1,616                                       ;
+; Total registers                    ; 1616                                        ;
+; Total pins                         ; 215                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                                      ; SCPFPGA            ; SCP                ;
+; Family name                                                                ; MAX 10             ; Cyclone V          ;
+; Block Design Naming                                                        ; QuartusII          ; Auto               ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------+---------+
+; dmem.vhd                         ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/dmem.vhd               ;         ;
+; de10rom1.vhd                     ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd           ;         ;
+; regfile.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/iliescua/Desktop/CE1921/SCP/regfile.bdf            ;         ;
+; fetch.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/iliescua/Desktop/CE1921/SCP/fetch.bdf              ;         ;
+; execute.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/iliescua/Desktop/CE1921/SCP/execute.bdf            ;         ;
+; decode.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/iliescua/Desktop/CE1921/SCP/decode.bdf             ;         ;
+; reg32.vhd                        ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/reg32.vhd              ;         ;
+; bmux16to1.vhd                    ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/bmux16to1.vhd          ;         ;
+; decode4to16.vhd                  ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/decode4to16.vhd        ;         ;
+; alu.vhd                          ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/alu.vhd                ;         ;
+; extimm.vhd                       ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd             ;         ;
+; constant8.vhd                    ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/constant8.vhd          ;         ;
+; constant4.vhd                    ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/constant4.vhd          ;         ;
+; adder.vhd                        ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/adder.vhd              ;         ;
+; pc.vhd                           ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd                 ;         ;
+; regsrcbmux.vhd                   ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd         ;         ;
+; bmux2to1.vhd                     ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/bmux2to1.vhd           ;         ;
+; reg4.vhd                         ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/reg4.vhd               ;         ;
+; controller.vhd                   ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/controller.vhd         ;         ;
+; SCP.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/iliescua/Desktop/CE1921/SCP/SCP.bdf                ;         ;
+; bmux2.vhd                        ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/bmux2.vhd              ;         ;
+; mulFunc.vhd                      ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/mulFunc.vhd            ;         ;
+; seg7decode.vhd                   ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/seg7decode.vhd         ;         ;
+; SEG7.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/iliescua/Desktop/CE1921/SCP/SEG7.bdf               ;         ;
+; LED.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/iliescua/Desktop/CE1921/SCP/LED.bdf                ;         ;
+; addrDecoder.vhd                  ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/addrDecoder.vhd        ;         ;
+; synchronizer.bdf                 ; yes             ; User Block Diagram/Schematic File  ; C:/Users/iliescua/Desktop/CE1921/SCP/synchronizer.bdf       ;         ;
+; SCPFPGA.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/iliescua/Desktop/CE1921/SCP/SCPFPGA.bdf            ;         ;
+; output_files/reg10.vhd           ; yes             ; User VHDL File                     ; C:/Users/iliescua/Desktop/CE1921/SCP/output_files/reg10.vhd ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 3,499     ;
+;                                             ;           ;
+; Total combinational functions               ; 1981      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 1670      ;
+;     -- 3 input functions                    ; 199       ;
+;     -- <=2 input functions                  ; 112       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 1861      ;
+;     -- arithmetic mode                      ; 120       ;
+;                                             ;           ;
+; Total registers                             ; 1616      ;
+;     -- Dedicated logic registers            ; 1616      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 215       ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 1616      ;
+; Total fan-out                               ; 13305     ;
+; Average fan-out                             ; 3.30      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                 ;
++--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------+--------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                             ; Entity Name  ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------+--------------+--------------+
+; |SCPFPGA                       ; 1981 (0)            ; 1616 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 215  ; 0            ; 0          ; |SCPFPGA                                                        ; SCPFPGA      ; work         ;
+;    |LED:inst5|                 ; 0 (0)               ; 10 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|LED:inst5                                              ; LED          ; work         ;
+;       |reg32:inst|             ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|LED:inst5|reg32:inst                                   ; reg32        ; work         ;
+;    |SCP:inst3|                 ; 1238 (0)            ; 546 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3                                              ; SCP          ; work         ;
+;       |bmux2to1:inst1|         ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|bmux2to1:inst1                               ; bmux2to1     ; work         ;
+;       |bmux2to1:inst4|         ; 90 (90)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|bmux2to1:inst4                               ; bmux2to1     ; work         ;
+;       |controller:inst7|       ; 36 (36)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|controller:inst7                             ; controller   ; work         ;
+;       |decode:inst16|          ; 734 (0)             ; 512 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16                                ; decode       ; work         ;
+;          |adder:inst|          ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|adder:inst                     ; adder        ; work         ;
+;          |extimm:inst2|        ; 34 (34)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|extimm:inst2                   ; extimm       ; work         ;
+;          |regfile:inst1|       ; 664 (0)             ; 512 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1                  ; regfile      ; work         ;
+;             |bmux16to1:inst32| ; 320 (320)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|bmux16to1:inst32 ; bmux16to1    ; work         ;
+;             |bmux16to1:inst34| ; 320 (320)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|bmux16to1:inst34 ; bmux16to1    ; work         ;
+;             |decode4to16:inst| ; 24 (24)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|decode4to16:inst ; decode4to16  ; work         ;
+;             |reg32:inst10|     ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst10     ; reg32        ; work         ;
+;             |reg32:inst11|     ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst11     ; reg32        ; work         ;
+;             |reg32:inst12|     ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst12     ; reg32        ; work         ;
+;             |reg32:inst13|     ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst13     ; reg32        ; work         ;
+;             |reg32:inst14|     ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst14     ; reg32        ; work         ;
+;             |reg32:inst15|     ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst15     ; reg32        ; work         ;
+;             |reg32:inst1|      ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst1      ; reg32        ; work         ;
+;             |reg32:inst2|      ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst2      ; reg32        ; work         ;
+;             |reg32:inst30|     ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst30     ; reg32        ; work         ;
+;             |reg32:inst3|      ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst3      ; reg32        ; work         ;
+;             |reg32:inst4|      ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst4      ; reg32        ; work         ;
+;             |reg32:inst5|      ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst5      ; reg32        ; work         ;
+;             |reg32:inst6|      ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst6      ; reg32        ; work         ;
+;             |reg32:inst7|      ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst7      ; reg32        ; work         ;
+;             |reg32:inst8|      ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst8      ; reg32        ; work         ;
+;             |reg32:inst9|      ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|reg32:inst9      ; reg32        ; work         ;
+;          |regsrcbmux:inst3|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|decode:inst16|regsrcbmux:inst3               ; regsrcbmux   ; work         ;
+;       |execute:inst|           ; 189 (0)             ; 2 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|execute:inst                                 ; execute      ; work         ;
+;          |alu:inst1|           ; 167 (167)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|execute:inst|alu:inst1                       ; alu          ; work         ;
+;          |bmux2to1:inst|       ; 22 (22)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|execute:inst|bmux2to1:inst                   ; bmux2to1     ; work         ;
+;          |reg4:inst2|          ; 0 (0)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|execute:inst|reg4:inst2                      ; reg4         ; work         ;
+;       |fetch:inst2|            ; 159 (0)             ; 32 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|fetch:inst2                                  ; fetch        ; work         ;
+;          |adder:inst3|         ; 29 (29)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|fetch:inst2|adder:inst3                      ; adder        ; work         ;
+;          |adder:inst|          ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|fetch:inst2|adder:inst                       ; adder        ; work         ;
+;          |iromv5:inst4|        ; 100 (100)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|fetch:inst2|iromv5:inst4                     ; iromv5       ; work         ;
+;          |pc:inst2|            ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SCP:inst3|fetch:inst2|pc:inst2                         ; pc           ; work         ;
+;    |SEG7:inst6|                ; 42 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SEG7:inst6                                             ; SEG7         ; work         ;
+;       |reg32:inst1|            ; 0 (0)               ; 24 (24)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SEG7:inst6|reg32:inst1                                 ; reg32        ; work         ;
+;       |seg7decode:inst|        ; 42 (42)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|SEG7:inst6|seg7decode:inst                             ; seg7decode   ; work         ;
+;    |addrDecoder:inst4|         ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|addrDecoder:inst4                                      ; addrDecoder  ; work         ;
+;    |dmem:inst8|                ; 685 (685)           ; 1024 (1024)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|dmem:inst8                                             ; dmem         ; work         ;
+;    |reg10:inst|                ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|reg10:inst                                             ; reg10        ; work         ;
+;    |synchronizer:inst2|        ; 0 (0)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCPFPGA|synchronizer:inst2                                     ; synchronizer ; work         ;
++--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                           ;
++-----------------------------------------------------+------------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                            ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------------------+------------------------+
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[31]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[30]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[29]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[28]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[27]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[26]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[25]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[24]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[23]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[22]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[21]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[20]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[19]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[18]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[17]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[16]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[15]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[14]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[13]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[12]      ; SCP:inst3|decode:inst16|extimm:inst2|Equal2    ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[11]      ; SCP:inst3|decode:inst16|extimm:inst2|imm32[11] ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[10]      ; SCP:inst3|decode:inst16|extimm:inst2|imm32[11] ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[9]       ; SCP:inst3|decode:inst16|extimm:inst2|imm32[11] ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[8]       ; SCP:inst3|decode:inst16|extimm:inst2|imm32[11] ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[7]       ; SCP:inst3|decode:inst16|extimm:inst2|imm32[7]  ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[6]       ; SCP:inst3|decode:inst16|extimm:inst2|imm32[7]  ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[5]       ; SCP:inst3|decode:inst16|extimm:inst2|imm32[7]  ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[4]       ; SCP:inst3|decode:inst16|extimm:inst2|imm32[7]  ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[3]       ; SCP:inst3|decode:inst16|extimm:inst2|imm32[7]  ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[2]       ; SCP:inst3|decode:inst16|extimm:inst2|imm32[7]  ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[1]       ; SCP:inst3|decode:inst16|extimm:inst2|imm32[7]  ; yes                    ;
+; SCP:inst3|decode:inst16|extimm:inst2|imm32[0]       ; SCP:inst3|decode:inst16|extimm:inst2|imm32[7]  ; yes                    ;
+; Number of user-specified and inferred latches = 32  ;                                                ;                        ;
++-----------------------------------------------------+------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; reg10:inst|Q[10..31]                   ; Stuck at GND due to stuck port data_in ;
+; SCP:inst3|execute:inst|reg4:inst2|Q3   ; Stuck at GND due to stuck port data_in ;
+; SCP:inst3|execute:inst|reg4:inst2|Q2   ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 24 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1616  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 592   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1574  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |SCPFPGA|SCP:inst3|bmux2to1:inst4|Y[29]                               ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCPFPGA|SCP:inst3|bmux2to1:inst4|Y[7]                                ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 128 LEs              ; 32 LEs                 ; No         ; |SCPFPGA|SCP:inst3|execute:inst|alu:inst1|Mux4                        ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCPFPGA|SCP:inst3|controller:inst7|ALUS[1]                           ;
+; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|bmux16to1:inst32|Mux3  ;
+; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |SCPFPGA|SCP:inst3|decode:inst16|regfile:inst1|bmux16to1:inst34|Mux26 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 215                         ;
+; cycloneiii_ff         ; 1616                        ;
+;     CLR               ; 42                          ;
+;     ENA               ; 1024                        ;
+;     ENA CLR           ; 550                         ;
+; cycloneiii_lcell_comb ; 2000                        ;
+;     arith             ; 120                         ;
+;         2 data inputs ; 57                          ;
+;         3 data inputs ; 63                          ;
+;     normal            ; 1880                        ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 19                          ;
+;         2 data inputs ; 53                          ;
+;         3 data inputs ; 136                         ;
+;         4 data inputs ; 1670                        ;
+;                       ;                             ;
+; Max LUT depth         ; 25.40                       ;
+; Average LUT depth     ; 14.50                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.0.2 Build 602 07/19/2017 SJ Lite Edition
+    Info: Processing started: Thu May 10 23:53:59 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCP -c SCP
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file dmem.vhd
+    Info (12022): Found design unit 1: dmem-behavioral File: C:/Users/iliescua/Desktop/CE1921/SCP/dmem.vhd Line: 47
+    Info (12023): Found entity 1: dmem File: C:/Users/iliescua/Desktop/CE1921/SCP/dmem.vhd Line: 35
+Info (12021): Found 2 design units, including 1 entities, in source file de10rom1.vhd
+    Info (12022): Found design unit 1: iromv5-dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 35
+    Info (12023): Found entity 1: iromv5 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 30
+Info (12021): Found 1 design units, including 1 entities, in source file regfile.bdf
+    Info (12023): Found entity 1: regfile
+Info (12021): Found 1 design units, including 1 entities, in source file fetch.bdf
+    Info (12023): Found entity 1: fetch
+Info (12021): Found 1 design units, including 1 entities, in source file execute.bdf
+    Info (12023): Found entity 1: execute
+Info (12021): Found 1 design units, including 1 entities, in source file decode.bdf
+    Info (12023): Found entity 1: decode
+Info (12021): Found 2 design units, including 1 entities, in source file irom.vhd
+    Info (12022): Found design unit 1: irom-dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/irom.vhd Line: 40
+    Info (12023): Found entity 1: irom File: C:/Users/iliescua/Desktop/CE1921/SCP/irom.vhd Line: 35
+Info (12021): Found 2 design units, including 1 entities, in source file reg32.vhd
+    Info (12022): Found design unit 1: reg32-Behavioral File: C:/Users/iliescua/Desktop/CE1921/SCP/reg32.vhd Line: 10
+    Info (12023): Found entity 1: reg32 File: C:/Users/iliescua/Desktop/CE1921/SCP/reg32.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bmux16to1.vhd
+    Info (12022): Found design unit 1: bmux16to1-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/bmux16to1.vhd Line: 12
+    Info (12023): Found entity 1: bmux16to1 File: C:/Users/iliescua/Desktop/CE1921/SCP/bmux16to1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decode4to16.vhd
+    Info (12022): Found design unit 1: decode4to16-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/decode4to16.vhd Line: 11
+    Info (12023): Found entity 1: decode4to16 File: C:/Users/iliescua/Desktop/CE1921/SCP/decode4to16.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: alu-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/alu.vhd Line: 15
+    Info (12023): Found entity 1: alu File: C:/Users/iliescua/Desktop/CE1921/SCP/alu.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file extimm.vhd
+    Info (12022): Found design unit 1: extimm-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 13
+    Info (12023): Found entity 1: extimm File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file constant8.vhd
+    Info (12022): Found design unit 1: constant8-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/constant8.vhd Line: 11
+    Info (12023): Found entity 1: constant8 File: C:/Users/iliescua/Desktop/CE1921/SCP/constant8.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file constant4.vhd
+    Info (12022): Found design unit 1: constant4-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/constant4.vhd Line: 11
+    Info (12023): Found entity 1: constant4 File: C:/Users/iliescua/Desktop/CE1921/SCP/constant4.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file adder.vhd
+    Info (12022): Found design unit 1: adder-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/adder.vhd Line: 13
+    Info (12023): Found entity 1: adder File: C:/Users/iliescua/Desktop/CE1921/SCP/adder.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: pc-Behavioral File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 13
+    Info (12023): Found entity 1: pc File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file regsrcbmux.vhd
+    Info (12022): Found design unit 1: regsrcbmux-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 13
+    Info (12023): Found entity 1: regsrcbmux File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file bmux2to1.vhd
+    Info (12022): Found design unit 1: bmux2to1-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/bmux2to1.vhd Line: 13
+    Info (12023): Found entity 1: bmux2to1 File: C:/Users/iliescua/Desktop/CE1921/SCP/bmux2to1.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file reg4.vhd
+    Info (12022): Found design unit 1: reg4-Behavioral File: C:/Users/iliescua/Desktop/CE1921/SCP/reg4.vhd Line: 13
+    Info (12023): Found entity 1: reg4 File: C:/Users/iliescua/Desktop/CE1921/SCP/reg4.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file controller.vhd
+    Info (12022): Found design unit 1: controller-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/controller.vhd Line: 19
+    Info (12023): Found entity 1: controller File: C:/Users/iliescua/Desktop/CE1921/SCP/controller.vhd Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file scp.bdf
+    Info (12023): Found entity 1: SCP
+Info (12021): Found 2 design units, including 1 entities, in source file bmux2.vhd
+    Info (12022): Found design unit 1: bmux2-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/bmux2.vhd Line: 13
+    Info (12023): Found entity 1: bmux2 File: C:/Users/iliescua/Desktop/CE1921/SCP/bmux2.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file mulfunc.vhd
+    Info (12022): Found design unit 1: mulFunc-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/mulFunc.vhd Line: 14
+    Info (12023): Found entity 1: mulFunc File: C:/Users/iliescua/Desktop/CE1921/SCP/mulFunc.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file seg7decode.vhd
+    Info (12022): Found design unit 1: seg7decode-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/seg7decode.vhd Line: 13
+    Info (12023): Found entity 1: seg7decode File: C:/Users/iliescua/Desktop/CE1921/SCP/seg7decode.vhd Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file seg7.bdf
+    Info (12023): Found entity 1: SEG7
+Info (12021): Found 1 design units, including 1 entities, in source file led.bdf
+    Info (12023): Found entity 1: LED
+Info (12021): Found 2 design units, including 1 entities, in source file addrdecoder.vhd
+    Info (12022): Found design unit 1: addrDecoder-Dataflow File: C:/Users/iliescua/Desktop/CE1921/SCP/addrDecoder.vhd Line: 14
+    Info (12023): Found entity 1: addrDecoder File: C:/Users/iliescua/Desktop/CE1921/SCP/addrDecoder.vhd Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file synchronizer.bdf
+    Info (12023): Found entity 1: synchronizer
+Info (12021): Found 1 design units, including 1 entities, in source file scpfpga.bdf
+    Info (12023): Found entity 1: SCPFPGA
+Info (12021): Found 2 design units, including 1 entities, in source file output_files/reg10.vhd
+    Info (12022): Found design unit 1: reg10-behavioral File: C:/Users/iliescua/Desktop/CE1921/SCP/output_files/reg10.vhd Line: 12
+    Info (12023): Found entity 1: reg10 File: C:/Users/iliescua/Desktop/CE1921/SCP/output_files/reg10.vhd Line: 4
+Info (12127): Elaborating entity "SCPFPGA" for the top level hierarchy
+Info (12128): Elaborating entity "SCP" for hierarchy "SCP:inst3"
+Info (12128): Elaborating entity "execute" for hierarchy "SCP:inst3|execute:inst"
+Info (12128): Elaborating entity "reg4" for hierarchy "SCP:inst3|execute:inst|reg4:inst2"
+Info (12128): Elaborating entity "alu" for hierarchy "SCP:inst3|execute:inst|alu:inst1"
+Info (12128): Elaborating entity "bmux2to1" for hierarchy "SCP:inst3|execute:inst|bmux2to1:inst"
+Info (12128): Elaborating entity "controller" for hierarchy "SCP:inst3|controller:inst7"
+Info (12128): Elaborating entity "fetch" for hierarchy "SCP:inst3|fetch:inst2"
+Info (12128): Elaborating entity "iromv5" for hierarchy "SCP:inst3|fetch:inst2|iromv5:inst4"
+Info (12128): Elaborating entity "pc" for hierarchy "SCP:inst3|fetch:inst2|pc:inst2"
+Info (12128): Elaborating entity "adder" for hierarchy "SCP:inst3|fetch:inst2|adder:inst"
+Info (12128): Elaborating entity "constant4" for hierarchy "SCP:inst3|fetch:inst2|constant4:inst80"
+Info (12128): Elaborating entity "constant8" for hierarchy "SCP:inst3|fetch:inst2|constant8:inst1"
+Info (12128): Elaborating entity "decode" for hierarchy "SCP:inst3|decode:inst16"
+Warning (275011): Block or symbol "bmux2" of instance "inst30" overlaps another block or symbol
+Info (12128): Elaborating entity "regsrcbmux" for hierarchy "SCP:inst3|decode:inst16|regsrcbmux:inst3"
+Info (10041): Inferred latch for "Y[0]" at regsrcbmux.vhd(16) File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 16
+Info (10041): Inferred latch for "Y[1]" at regsrcbmux.vhd(16) File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 16
+Info (10041): Inferred latch for "Y[2]" at regsrcbmux.vhd(16) File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 16
+Info (10041): Inferred latch for "Y[3]" at regsrcbmux.vhd(16) File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 16
+Info (12128): Elaborating entity "extimm" for hierarchy "SCP:inst3|decode:inst16|extimm:inst2"
+Info (10041): Inferred latch for "imm32[0]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[1]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[2]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[3]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[4]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[5]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[6]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[7]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[8]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[9]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[10]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[11]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[12]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[13]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[14]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[15]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[16]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[17]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[18]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[19]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[20]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[21]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[22]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[23]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[24]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[25]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[26]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[27]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[28]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[29]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[30]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (10041): Inferred latch for "imm32[31]" at extimm.vhd(21) File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Info (12128): Elaborating entity "regfile" for hierarchy "SCP:inst3|decode:inst16|regfile:inst1"
+Info (12128): Elaborating entity "bmux16to1" for hierarchy "SCP:inst3|decode:inst16|regfile:inst1|bmux16to1:inst32"
+Info (12128): Elaborating entity "reg32" for hierarchy "SCP:inst3|decode:inst16|regfile:inst1|reg32:inst15"
+Info (12128): Elaborating entity "decode4to16" for hierarchy "SCP:inst3|decode:inst16|regfile:inst1|decode4to16:inst"
+Info (12128): Elaborating entity "bmux2" for hierarchy "SCP:inst3|decode:inst16|bmux2:inst30"
+Info (12128): Elaborating entity "mulFunc" for hierarchy "SCP:inst3|mulFunc:inst12"
+Info (12128): Elaborating entity "synchronizer" for hierarchy "synchronizer:inst2"
+Info (12128): Elaborating entity "addrDecoder" for hierarchy "addrDecoder:inst4"
+Info (12128): Elaborating entity "reg10" for hierarchy "reg10:inst"
+Info (12128): Elaborating entity "dmem" for hierarchy "dmem:inst8"
+Info (12128): Elaborating entity "LED" for hierarchy "LED:inst5"
+Info (12128): Elaborating entity "SEG7" for hierarchy "SEG7:inst6"
+Info (12128): Elaborating entity "seg7decode" for hierarchy "SEG7:inst6|seg7decode:inst"
+Warning (14026): LATCH primitive "SCP:inst3|decode:inst16|regsrcbmux:inst3|Y[1]" is permanently enabled File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 16
+Warning (14026): LATCH primitive "SCP:inst3|decode:inst16|regsrcbmux:inst3|Y[2]" is permanently enabled File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 16
+Warning (14026): LATCH primitive "SCP:inst3|decode:inst16|regsrcbmux:inst3|Y[3]" is permanently enabled File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 16
+Warning (14026): LATCH primitive "SCP:inst3|decode:inst16|regsrcbmux:inst3|Y[0]" is permanently enabled File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 16
+Warning (14026): LATCH primitive "SCP:inst3|decode:inst16|regsrcbmux:inst3|Y[3]" is permanently enabled File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 16
+Warning (14026): LATCH primitive "SCP:inst3|decode:inst16|regsrcbmux:inst3|Y[2]" is permanently enabled File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 16
+Warning (14026): LATCH primitive "SCP:inst3|decode:inst16|regsrcbmux:inst3|Y[1]" is permanently enabled File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 16
+Warning (14026): LATCH primitive "SCP:inst3|decode:inst16|regsrcbmux:inst3|Y[0]" is permanently enabled File: C:/Users/iliescua/Desktop/CE1921/SCP/regsrcbmux.vhd Line: 16
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "dmem:inst8|MEMARRAY" is uninferred due to asynchronous read logic File: C:/Users/iliescua/Desktop/CE1921/SCP/dmem.vhd Line: 50
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[25]" merged with LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[31]" File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[30]" merged with LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[31]" File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[29]" merged with LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[31]" File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[28]" merged with LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[31]" File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[27]" merged with LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[31]" File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[26]" merged with LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[31]" File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[12]" merged with LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[13]" File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[10]" merged with LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[11]" File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[8]" merged with LATCH primitive "SCP:inst3|decode:inst16|extimm:inst2|imm32[9]" File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[31] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[24] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[23] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[22] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[21] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[20] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[19] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[18] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[17] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[16] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[15] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[14] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[13] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|pc:inst2|Q[31] File: C:/Users/iliescua/Desktop/CE1921/SCP/pc.vhd Line: 19
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[11] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|iromv5:inst4|WideNor0 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 62
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|iromv5:inst4|WideOr1 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 37
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[9] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|iromv5:inst4|WideNor0 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 62
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SCP:inst3|fetch:inst2|iromv5:inst4|WideOr1 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 37
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[7] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|iromv5:inst4|WideOr1 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 37
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[6] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|iromv5:inst4|WideNor0 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 62
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[5] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|iromv5:inst4|WideOr1 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 37
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[4] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|iromv5:inst4|WideOr1 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 37
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[3] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|iromv5:inst4|WideOr1 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 37
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[2] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|iromv5:inst4|WideOr1 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 37
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[1] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|iromv5:inst4|WideOr1 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 37
+Warning (13012): Latch SCP:inst3|decode:inst16|extimm:inst2|imm32[0] has unsafe behavior File: C:/Users/iliescua/Desktop/CE1921/SCP/extimm.vhd Line: 21
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SCP:inst3|fetch:inst2|iromv5:inst4|WideOr1 File: C:/Users/iliescua/Desktop/CE1921/SCP/de10rom1.vhd Line: 37
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "PCWR" is stuck at VCC
+    Warning (13410): Pin "C" is stuck at GND
+    Warning (13410): Pin "V" is stuck at GND
+    Warning (13410): Pin "SEG0[7]" is stuck at VCC
+    Warning (13410): Pin "SEG1[7]" is stuck at VCC
+    Warning (13410): Pin "SEG2[7]" is stuck at VCC
+    Warning (13410): Pin "SEG3[7]" is stuck at VCC
+    Warning (13410): Pin "SEG4[7]" is stuck at VCC
+    Warning (13410): Pin "SEG5[7]" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3780 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 203 output pins
+    Info (21061): Implemented 3565 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 81 warnings
+    Info: Peak virtual memory: 691 megabytes
+    Info: Processing ended: Thu May 10 23:54:19 2018
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:36
+
+

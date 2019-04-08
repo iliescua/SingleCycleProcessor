@@ -1,0 +1,109 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/iliescua/Desktop/CE1921/SCP/simulation/modelsim
+Ebmux16to1
+w1525025998
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+8C:/Users/iliescua/Desktop/CE1921/SCP/bmux16to1.vhd
+FC:/Users/iliescua/Desktop/CE1921/SCP/bmux16to1.vhd
+l0
+L4
+VKTofVoWjNW`6l8EDRc]oU1
+!s100 `IW_doPe>dH[<A=Nl9k5V1
+Z3 OV;C;10.5b;63
+31
+Z4 !s110 1525030192
+!i10b 1
+Z5 !s108 1525030192.000000
+!s90 -reportprogress|300|-93|-work|work|C:/Users/iliescua/Desktop/CE1921/SCP/bmux16to1.vhd|
+!s107 C:/Users/iliescua/Desktop/CE1921/SCP/bmux16to1.vhd|
+!i113 1
+Z6 o-93 -work work
+Z7 tExplicit 1 CvgOpt 0
+Ereg32
+Z8 w1524843857
+R1
+R2
+R0
+Z9 8C:/Users/iliescua/Desktop/CE1921/SCP/reg32.vhd
+Z10 FC:/Users/iliescua/Desktop/CE1921/SCP/reg32.vhd
+l0
+L4
+VX__>3?QSjfD_WT1HO2F=B0
+!s100 NDHRGNA^ZAQRfNAUAYW4k1
+R3
+31
+R4
+!i10b 1
+R5
+Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/iliescua/Desktop/CE1921/SCP/reg32.vhd|
+Z12 !s107 C:/Users/iliescua/Desktop/CE1921/SCP/reg32.vhd|
+!i113 1
+R6
+R7
+Abehavioral
+R1
+R2
+DEx4 work 5 reg32 0 22 X__>3?QSjfD_WT1HO2F=B0
+l14
+L10
+VWEjD:FdRaRQ01ddA0dO5N2
+!s100 TOoKKAJ]AcDJHfK^hK[ID2
+R3
+31
+R4
+!i10b 1
+R5
+R11
+R12
+!i113 1
+R6
+R7
+Eregfile
+Z13 w1525029915
+R1
+R2
+R0
+Z14 8C:/Users/iliescua/Desktop/CE1921/SCP/regfile.vhd
+Z15 FC:/Users/iliescua/Desktop/CE1921/SCP/regfile.vhd
+l0
+L25
+VH<@6OMT9Dn;JT]X4J]?7R2
+!s100 Co2KbU`@75@[5n^:J:75@0
+R3
+31
+R4
+!i10b 1
+R5
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/iliescua/Desktop/CE1921/SCP/regfile.vhd|
+Z17 !s107 C:/Users/iliescua/Desktop/CE1921/SCP/regfile.vhd|
+!i113 1
+R6
+R7
+Abdf_type
+R1
+R2
+DEx4 work 7 regfile 0 22 H<@6OMT9Dn;JT]X4J]?7R2
+l129
+L40
+VGNH=G[o5WT^6V4iV0MDO81
+!s100 B=G:0IHi[OHZ89Qae<MZA2
+R3
+31
+R4
+!i10b 1
+R5
+R16
+R17
+!i113 1
+R6
+R7

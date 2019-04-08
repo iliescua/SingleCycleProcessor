@@ -1,0 +1,26 @@
+--LR
+--Andrew Iliescu
+--4/29/18
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity lr is
+port(LD,RST,CLK : in std_logic;
+	  D : in std_logic_vector(31 downto 0);
+	  Q : out std_logic_vector(31 downto 0));
+end entity lr;
+
+architecture Behavioral of lr is
+begin
+
+	process(CLK)
+	begin
+	
+		if(RST = '1') then--Reset is active high
+			Q <= X"00000000";
+		elsif(rising_edge(CLK) and LD = '1') then--Events happen on the rising clock edge
+			Q <= D;
+		end if;
+		
+	end process;
+end architecture Behavioral;

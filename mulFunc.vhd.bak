@@ -1,0 +1,15 @@
+library ieee;
+ieee.std_logic_1164.all;
+ieee.std_logic_signed.all;
+
+entity mulFunc is 
+port(A0, A1 : in std_logic_vector(31 downto 0);
+	  P : out sts_logic_vector(63 downto 0));
+end entity mulFunc;
+
+architecture Dataflow of mulFunc is
+begin
+
+	P <= (A * B);
+	
+end architecture Dataflow;
